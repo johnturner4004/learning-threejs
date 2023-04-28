@@ -49,6 +49,17 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
+const johnTexture = new THREE.TextureLoader().load('John.jpeg');
+const john = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial( { map: johnTexture } )
+);
+
+scene.add(john);
+
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
+
 function animate() {
   requestAnimationFrame( animate );
 
